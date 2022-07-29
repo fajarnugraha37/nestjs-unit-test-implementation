@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "497b7bc2-1217-4a98-9dc4-10120b67dc1b",
+		"name": "eigen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19448952"
+	},
+	"item": [
+		{
+			"name": "members",
+			"item": [
+				{
+					"name": "getAllMembers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/members?page=1&rowsPerPage=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"members"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "rowsPerPage",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMembersByCode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/members/:code",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"members",
+								":code"
+							],
+							"variable": [
+								{
+									"key": "code",
+									"value": "M001",
+									"description": "code member"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "borrow",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/members/:memberCode/borrow/:bookCode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"members",
+								":memberCode",
+								"borrow",
+								":bookCode"
+							],
+							"variable": [
+								{
+									"key": "memberCode",
+									"value": "M001"
+								},
+								{
+									"key": "bookCode",
+									"value": "JK-45"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "return",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/members/:memberCode/return/:bookCode",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"members",
+								":memberCode",
+								"return",
+								":bookCode"
+							],
+							"variable": [
+								{
+									"key": "memberCode",
+									"value": "M001"
+								},
+								{
+									"key": "bookCode",
+									"value": "JK-45"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "getAllBooks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/books?canBeBorrowOnly=true&page=1&rowsPerPage=20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"books"
+							],
+							"query": [
+								{
+									"key": "canBeBorrowOnly",
+									"value": "true",
+									"description": "jika true hanya buku yang BISA DIPINJAM yang akan ditampilkan, jika false maka seluruh buku"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "rowsPerPage",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getBooksByCode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/books/:code",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"books",
+								":code"
+							],
+							"variable": [
+								{
+									"key": "code",
+									"value": "HOB-83"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
