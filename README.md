@@ -1,25 +1,37 @@
-# Backend Test Case
+# Example Unit Test in NestJS
 
-### Identity
-Nama: Fajar Abdi Nugraha<br>
-Email: nugrahafajar37@gmail.com<br>
+### specification
+<ul>
+    <li>Nodejs: v18.6.0
+    <li>npm: 8.13.2
+    <li>mysql: 8.0.27
+</ul>
 
-### Description
-<p>
-  Sebelum menjalakan app, rename terlebih dahulu <b><i>.env.example</i></b> menjadi <b><i>.env</i></b><br>
-  dan sesuaikan dengan environment dimana aplikasi dijalankan<br>
-  untuk database di MySql tidak perlu dibuat nanti akan dibuatkan ketika app dijalankan jika database tidak ada<br>
-  untuk seed data pakai Mock Data dari github soal, jika ingin ditambah ada di <b><i>src\databases\seeds</i></b><br>
-  seeding dieksekusi setiap aplikasi dijalankan dan hanya akan dilakukan jika data di table kosong, jadi kalau mau merubah seeding pastikan data di table itu kosong<br>
-  Untuk swagger ada di <b><i>${HOST_NAME}/swagger</i></b><br>
-  Spec di local development:
-    <ul>
-        <li>Nodejs: v18.6.0
-        <li>npm: 8.13.2
-        <li>mysql: 8.0.27
-  </ul>
-</p>
+### Use Case
+- Members can borrow books with conditions
+    - [ ]  Members may not borrow more than 2 books
+    - [ ]  Borrowed books are not borrowed by other members
+    - [ ]  Member is currently not being penalized
+- Member returns the book with conditions
+    - [ ]  The returned book is a book that the member has borrowed
+    - [ ]  If the book is returned after more than 7 days, the member will be subject to a penalty. Member with penalty cannot able to borrow the book for 3 days
+- Check the book
+    - [ ]  Shows all existing books and quantities
+    - [ ]  Books that are being borrowed are not counted
+- Member check
+    - [ ]  Shows all existing members
+    - [ ]  The number of books being borrowed by each member
 
+### Endpoint
+GET   ${HOST_NAME}/swagger                                    => API Documentation
+GET   ${HOST_NAME}/members                                    => to fetch all members
+GET   ${HOST_NAME}/members/:code                              => to fetch member with spcific member-code
+GET   ${HOST_NAME}/books                                      => to fetch all books
+GET   ${HOST_NAME}/book/:code                                 => to fetch book with spcific book-code
+GET   ${HOST_NAME}/members                                    => to fetch all members
+GET   ${HOST_NAME}/members/:code                              => to fetch member with spcific member-code
+POST  ${HOST_NAME}/members/:memberCode/borrow/:bookCode       => borrow a book operation
+POST  ${HOST_NAME}/members/:memberCode/return/:bookCode       => return a book operation
 ### Running
 <h6><i>install dependency</i></h6>
 <code>npm install</code>
