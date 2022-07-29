@@ -1,11 +1,9 @@
 # Example Unit Test in NestJS
 
-### specification
-<ul>
-    <li>Nodejs: v18.6.0
-    <li>npm: 8.13.2
-    <li>mysql: 8.0.27
-</ul>
+### Specification
+- Nodejs: v18.6.0
+- npm: 8.13.2
+- mysql: 8.0.27
 
 ### Use Case
 - Members can borrow books with conditions
@@ -23,21 +21,40 @@
     - [X]  The number of books being borrowed by each member
 
 ### Endpoint
-GET   ${HOST_NAME}/swagger                                    => API Documentation
-GET   ${HOST_NAME}/members                                    => to fetch all members
-GET   ${HOST_NAME}/members/:code                              => to fetch member with spcific member-code
-GET   ${HOST_NAME}/books                                      => to fetch all books
-GET   ${HOST_NAME}/book/:code                                 => to fetch book with spcific book-code
-GET   ${HOST_NAME}/members                                    => to fetch all members
-GET   ${HOST_NAME}/members/:code                              => to fetch member with spcific member-code
-POST  ${HOST_NAME}/members/:memberCode/borrow/:bookCode       => borrow a book operation
-POST  ${HOST_NAME}/members/:memberCode/return/:bookCode       => return a book operation
+- [X] GET   
+  - ${HOST_NAME}/swagger                                    
+  - API Documentation
+- [X] GET   
+  - ${HOST_NAME}/members                                    
+  - to fetch all members
+- [X] GET   
+  - ${HOST_NAME}/members/:code                              
+  - to fetch member with spcific member-code
+- [X] GET   
+  - ${HOST_NAME}/books                                      
+  - to fetch all books
+- [X] GET   
+  - ${HOST_NAME}/book/:code                                 
+  - to fetch book with spcific book-code
+- [X] GET   
+  - ${HOST_NAME}/members                                    
+  - to fetch all members
+- [X] GET   
+  - ${HOST_NAME}/members/:code                              
+  - to fetch member with spcific member-code
+- [X] POST  
+  - ${HOST_NAME}/members/:memberCode/borrow/:bookCode       
+  - borrow a book operation
+- [X] POST  
+  - ${HOST_NAME}/members/:memberCode/return/:bookCode       
+  - return a book operation
+  
 ### Running
-<h6><i>install dependency</i></h6>
+- <h6><i>install dependency</i></h6>
 <code>npm install</code>
 
-<h6><i>running test</i></h6>
+- <h6><i>running test</i></h6>
 <code>npm run test</code>
 
-<h6><i>running app</i></h6>
+- <h6><i>running app</i></h6>
 <code>npm run start</code>
